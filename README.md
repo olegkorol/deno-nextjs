@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js with Deno v2
 
-## Getting Started
+An example of how to run a Next.js app on the Deno (v2) runtime and deploy it to the Deno Deploy platform.
 
-First, run the development server:
+This repo was created with the `create-next-app` CLI:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest
+# Selected to use Turbopack to get faster builds, but this is optional.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you wish, you can create a new project with the aforementioned command and then follow the steps below.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quick Start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Make sure you have Deno installed:
 
-## Learn More
+```bash
+deno --version
+# deno should be >=2.0.0, if not run `deno upgrade`
+# if the command was not found, head to https://deno.com/
+```
 
-To learn more about Next.js, take a look at the following resources:
+Running the app locally in development mode:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+deno run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Building the app:
 
-## Deploy on Vercel
+```bash
+deno run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deno Deploy(ment)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You'll need `deployctl` to deploy to Deno Deploy:
+
+```bash
+# check if you have it installed
+deployctl --version
+
+# if not, you can install it with
+deno install -gArf jsr:@deno/deployctl
+```
+
+Alright, let's actually deploy our Next.js app.
+
+The process differs slightly based on the version of Next.js you're using.
+This repo uses Next.js v15, so we'll run the first command after the build step:
+
+```bash
+deno run build
+
+# For Next.js 15
+deployctl deploy --include=.next --include=public jsr:@deno/nextjs-start/v15
+
+# For Next.js 14
+deployctl deploy --include=.next --include=public jsr:@deno/nextjs-start
+```
+
+That's it!
+
+You'll see that a `deno.json` file is created in the root of the project (which is added to the `.gitignore` file so that you start from scratch).
+
+## References
+
+- https://github.com/nextjs/deploy-deno
+- https://jsr.io/@deno/nextjs-start
+- https://nextjs.org/docs/app/api-reference/cli/create-next-app
