@@ -9,14 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@deno/kv": "^0.9.0",
-    "@deno/kv-linux-x64-gnu": "^0.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.1.6"
   },
   "devDependencies": {
-    "node-loader": "^2.1.0",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",

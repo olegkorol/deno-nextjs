@@ -1,8 +1,4 @@
-import { openKv } from "@deno/kv";
-
-// Connect to a KV instance (you'll need to store an access token in the DENO_KV_ACCESS_TOKEN environment variable to use this)
-const DATABASE_ID = "9f604569-2236-4a17-9440-e5cf1d3533fd"
-const kv = await openKv(`https://api.deno.com/databases/${DATABASE_ID}/connect`);
+import { kv } from "../../../denoDeploy.ts";
 
 export async function GET() {
   const name = await kv.get(["name"]);  
