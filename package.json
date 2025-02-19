@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@deno/kv": "^0.9.0",
+    "@deno/kv-linux-x64-gnu": "^0.9.0",
+    "@deno/kv-darwin-x64": "^0.9.0",
+    "@deno/kv-darwin-arm64": "^0.9.0",
+    "@deno/kv-win32-x64-msvc": "^0.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.1.6"
