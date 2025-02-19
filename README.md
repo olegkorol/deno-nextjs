@@ -64,6 +64,10 @@ That's it!
 
 You'll see that a `deno.json` file is created in the root of the project (which is added to the `.gitignore` file so that you start from scratch).
 
+## Notes
+
+- https://docs.deno.com/runtime/reference/ts_config_migration/
+
 ## References
 
 - https://github.com/nextjs/deploy-deno
