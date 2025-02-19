@@ -1,6 +1,7 @@
 {
   "version": "4",
   "specifiers": {
+    "npm:@deno/kv@0.9": "0.9.0",
     "npm:@eslint/eslintrc@3": "3.2.0",
     "npm:@types/node@20": "20.17.19",
     "npm:@types/react-dom@19": "19.0.4_@types+react@19.0.10",
@@ -17,6 +18,27 @@
   "npm": {
     "@alloc/quick-lru@5.2.0": {
       "integrity": "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="
+    },
+    "@deno/kv-darwin-arm64@0.9.0": {
+      "integrity": "sha512-9o2typxowaiIW7TJFzbuDEIpmZA9/At+kO7ljgb+jEm16gBHtCkDt69TU4h0ZIMmHo7E9Mo+W84BeGdXkxUGcg=="
+    },
+    "@deno/kv-darwin-x64@0.9.0": {
+      "integrity": "sha512-LxCNbOO3INW5VkhLviRLvQoiJtiNlgSvPZM5JwVQhu4dWNpuMI7Hl2cU1PB3mOwuYHdORnkj5BqChQRdRh4F0g=="
+    },
+    "@deno/kv-linux-x64-gnu@0.9.0": {
+      "integrity": "sha512-DqhJdWD/mzb/WHHaL9QqsPZxuk/w1haWDnEOZ3rda704q/lJFkIBMBWBB8kDDbVphQ2WNVU0uKyAdxNYpUK8YQ=="
+    },
+    "@deno/kv-win32-x64-msvc@0.9.0": {
+      "integrity": "sha512-yDLd0OY/7nOoUG8WypEOLIME0ZADqgG7ciKiL7hOy06ra1gR9AaZeacsZ2Df2SxSnuuOVJpxUhml+JRVx+LGpg=="
+    },
+    "@deno/kv@0.9.0": {
+      "integrity": "sha512-NdnyNKpxH+Hjb/55v+qpLG39Tz/otlyl0FFaNCRcOtQfCmjRsJevoZugBR+d+O+/5PYmmj/fgfcpYgnukM1r5A==",
+      "dependencies": [
+        "@deno/kv-darwin-arm64",
+        "@deno/kv-darwin-x64",
+        "@deno/kv-linux-x64-gnu",
+        "@deno/kv-win32-x64-msvc"
+      ]
     },
     "@emnapi/runtime@1.3.1": {
       "integrity": "sha512-kEBmG8KyqtxJZv+ygbEim+KCGtIq1fC22Ms3S4ziXmYKm8uyoLX0MHONVKwp+9opg390VaKRNt4a7A9NwmpNhw==",
@@ -2454,6 +2476,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@deno/kv@0.9",
         "npm:@eslint/eslintrc@3",
         "npm:@types/node@20",
         "npm:@types/react-dom@19",
